@@ -39,8 +39,8 @@
         <property name="jobRepository" ref="jobRepository"></property>
     </bean>
     
-    <!-- 实体bean -->
-    <bean id="accessBean" class="com.me.springbatch.support.AccessBean"></bean>
+    <!-- 实体bean scope="prototype"非单例-->
+    <bean id="accessBean" class="com.me.springbatch.support.AccessBean" scope="prototype"></bean>
 
     <import resource="classpath:/META-INF/spring/*.xml" />
 
