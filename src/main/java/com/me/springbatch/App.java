@@ -29,9 +29,12 @@ public class App {
         } catch (Exception e) {
             e.printStackTrace();
         }finally{
+        	/** 如果jobLauncher的taskExecutor设置为异步多线程，这里应该注释掉，否则由于job还在执行，而context关闭
+        	 * ，就会导致所有bean（包括数据源dataSource）关闭，从而导致job出错：Data source is closed等错误
         	if(context != null){
         		context.close();
         	}
+        	**/
         }
         long end = System.currentTimeMillis() ;
         log.debug("任务【"+jobId+"】执行完毕！共花费："+(end - start) + "毫秒");
