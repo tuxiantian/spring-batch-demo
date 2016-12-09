@@ -5,7 +5,7 @@
 	http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-3.0.xsd
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
-	<description>Hello Job</description>
+	<description>解析文件插入数据库</description>
 
     <batch:job id="readFile2DBJob">
         <batch:step id="readFile2DBStep">
